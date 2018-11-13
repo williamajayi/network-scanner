@@ -5,10 +5,10 @@ import argparse, requests
 
 def get_arguments():
     parser = argparse.ArgumentParser()
-    parser.add_argument("-t", "--target", dest="target", help="Target IP / IP range")
+    parser.add_argument("-r", "--range", dest="range", help="Target IP range")
     options = parser.parse_args()
-    if not options.target:
-        parser.error("[-] Please specify a target to scan using -t or --target options, use --help for more info.")
+    if not options.range:
+        parser.error("[-] Please specify a network range to scan using -t or --range options, use --help for more info.")
     return options
 
 def get_vendor(mac_address):
@@ -43,5 +43,5 @@ def show_clients(client_list):
 
 if __name__ == "__main__":
     options = get_arguments()
-    target_ip = scan(options.target)
+    target_ip = scan(options.range)
     show_clients(target_ip)
