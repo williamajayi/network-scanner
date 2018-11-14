@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import scapy.all as scapy
-import argparse, requests
+import argparse, requests, time
 
 def get_arguments():
     parser = argparse.ArgumentParser()
@@ -32,6 +32,7 @@ def scan(ip):
         "vendor": vendor
         }
         client_list.append(client_dict)
+        time.sleep(1)
     return client_list
 
 def show_clients(client_list):
