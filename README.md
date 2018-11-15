@@ -12,4 +12,4 @@ Usage:
 
 python network_scanner.py -r [Network Range]
 
-python3 network_scanner.py -i [Network Range]
+python3 network_scanner.py -r [Network Range]
